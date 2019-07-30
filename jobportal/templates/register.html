@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> register </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway:600|Roboto:300,400,500,700" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="register.css"> -->
+</head>
+<style>
+  /* Start Some Resets Classes */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -os-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #2c3e50;
+}
+
+input,
+textarea,
+select {
+  transition: 0.5s;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  resize: none;
+  font-family: 'Lato';
+  width: 50%;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(52, 152, 219, 0.8);
+  box-shadow: 0 1px 1px rgba(52, 152, 219, 0.075) inset, 0 0 8px rgba(41, 128, 185, 0.6);
+}
+
+a {
+  text-decoration: none;
+  color: #2980b9;
+  font-family: 'Lato';
+}
+
+a.dec:hover {
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #3498db;
+}
+
+.btn {
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  color: #fff;
+  background-color: #2980b9;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s;
+  margin-top: 5px;
+}
+
+.btn-dark {
+  background-color: #2c3e50;
+}
+
+.btn-dark:hover {
+  background-color: #34495e;
+}
+
+.btn-upper {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+::-webkit-input-placeholder {
+  color: #FFF;
+  opacity: 0.6;
+}
+
+::-ms-input-placeholder {
+  color: #FFF;
+  opacity: 0.6;
+}
+
+::-o-input-placeholder {
+  color: #FFF;
+  opacity: 0.6;
+}
+
+::-moz-input-placeholder {
+  color: #FFF;
+  opacity: 0.6;
+}
+
+::input-placeholder {
+  color: #FFF;
+  opacity: 0.6;
+}
+
+/* End Some Resets Classes */
+/* Start Style of form */
+.form-register {
+  width: 75%;
+  padding: 15px;
+  margin: 15px auto;
+  text-align: center;
+}
+.form-register form {
+  position: relative;
+}
+.form-register form h1 {
+  color: #FFF;
+  font-weight: 300;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+.form-register form input,
+.form-register form button {
+  width: 70%;
+}
+.form-register form input {
+  background-color: #2c3e50;
+  border: 1px solid #34495e;
+  color: #FFF;
+}
+.form-register form input ~ span {
+  background-color: #e74c3c;
+  display: none;
+  padding: 10px;
+  position: absolute;
+  width: 230px;
+  color: #FFF;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+.form-register form input ~ span:after {
+  content: "";
+  position: absolute;
+  left: -17.5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #e74c3c transparent transparent;
+}
+
+    body {
+  margin: 0;
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* End Style of form */
+
+</style>
+<body>
+  <div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/register/">Register</a>
+  <a href="/aboutus/">About us</a>
+
+  <div style="margin-left:1200px;">
+    <a href="/loginview/">Login/signup</a>
+  </div>
+ 
+</div>
+<!-- partial:index.partial.html -->
+<div class='form-register'>
+  <form action="/register/" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    <h1>Fill your informations</h1>
+    <input class='first' type='text' name="name" placeholder='Enter your name' required>
+    <span class='err-one'>Please fill name</span>
+    
+    <input class='second' type='email' name="email" placeholder='Enter email' required>
+    <span class='err-two'>Please fill email</span>
+    
+    <input class='third' type='phone' name="phone" placeholder='Enter phone number' required>
+    <span class='err-three'>Please fill phone</span>
+    
+    <input class='forth' type='text' name="location" placeholder='Enter your location' required>
+    <span class='err-four'>Please fill location</span>
+
+    <input  type='file' name="cv" placeholder='upload resume' required>
+
+    <!-- <input  type='text' name="job" placeholder='Enter your job' required> -->
+    <!-- <span class='err-fifth'>Pleasefill job</span> -->
+    
+      
+        <select name="job" size="0">
+        <option value="none">-----   Enter your job role        --</option>
+        <option value="Python">Python</option>
+        <option value="HTML">HTML</option>
+        <option value="oracle">oracle</option>
+        <option value="Java">Java</option>
+        <option value=".NET">.NET</option>
+        </select>
+      
+
+    
+    <!-- <span class='err-sixth'>Please upload resume</span><br> -->
+    
+    <button class='btn'><i class='fa fa-user-plus'></i> Register</button>
+  </form>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script>
+  $(function () {
+/************************************************************/
+  // First input
+    $('.form-register input.first').blur(function () {
+       if ($(this).val() == "") {
+         $('.err-one').fadeIn();
+       } else {
+          $('.err-one').fadeOut();
+       }
+    });
+/************************************************************/
+   // Second input
+    $('.form-register input.second').blur(function () {
+       if ($(this).val() == "") {
+         $('.err-two').fadeIn();
+       } else {
+          $('.err-two').fadeOut();
+       }
+    });
+/************************************************************/
+   // Third input
+    $('.form-register input.third').blur(function () {
+       if ($(this).val() == "") {
+         $('.err-three').fadeIn();
+       } else {
+          $('.err-three').fadeOut();
+       }
+    });
+/************************************************************/
+   // fourth input
+    $('.form-register input.forth').blur(function () {
+       if ($(this).val() == "") {
+         $('.err-four').fadeIn();
+       } else {
+          $('.err-four').fadeOut();
+       }
+    });
+/************************************************************/
+/************************************************************/
+   // fifth input
+    // $('.form-register input.fifth').blur(function () {
+    //    if ($(this).val() == "") {
+    //      $('.err-fifth').fadeIn();
+    //    } else {
+    //       $('.err-fifth').fadeOut();
+    //    }
+    // });
+/************************************************************/
+   // sixth input
+    // $('.form-register input.sixth').blur(function () {
+    //    if ($(this).val() == "") {
+    //      $('.err-sixth').fadeIn();
+    //    } else {
+    //       $('.err-sixth').fadeOut();
+    //    }
+    // });
+/************************************************************/
+
+}); // Main function
+</script>
+
+</body>
+</html>

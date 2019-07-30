@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<title>Work Scout</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/green.css' %}" id="colors">
+<style>
+	.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/aboutus/">About us</a>
+
+  <div style="margin-left:1200px;">
+    <a href="/loginview/">Logout</a>
+  </div>
+ 
+</div>
+<div id="wrapper">
+
+<div id="titlebar">
+	<div class="container">
+		<div class="ten columns">
+			<span><a href="browse-jobs.html">Software / Python </a></span>
+			<h2>Full Stack developer<span class="full-time">Full-Time</span></h2>
+		</div>
+
+	</div>
+</div>
+
+
+<div class="container">
+	
+	<!-- Recent Jobs -->
+	<div class="eleven columns">
+	<div class="padding-right">
+		
+		<!-- Company Info -->
+		<div class="company-info">
+			<img src="{% static 'images/company-logo.png' %}" alt="">
+			<div class="content">
+				<h4>TATA Consultancy LLC</h4>
+				<span><a href="https://www.tcs.com/"><i class="fa fa-link"></i> Website</a></span>
+				<span><a href="https://www.tcs.com/"><i class="fa fa-twitter"></i> @Tata Consultancy</a></span>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<p class="margin-reset">
+			This Python Developer job description template includes the list of most important Python Developer's duties and responsibilities. It is customizable and ready to post to job boards. Use it to save time, attract qualified candidates and hire best employees.
+		</p>
+
+		<br>
+		<p>The <strong> Service Specialist</strong> will have responsibilities that include:</p>
+
+		<ul class="list-1">
+			<li>Work collaboratively with design team to understand end user requirements to provide technical solutions and for the implementation of new software features
+			</li>
+			<li>Familiarity with some ORM (Object Relational Mapper) libraries</li>
+			<li>Basic understanding of front-end technologies, such as JavaScript, HTML5, and CSS3.</li>
+			
+		</ul>
+		
+		<br>
+
+		<h4 class="margin-bottom-10">Job Requirment</h4>
+
+		<ul class="list-1">
+			<li>Write reusable, testable, and efficient code</li>
+			<li>Performance tuning, improvement, balancing, usability, automation</li>
+			<li>Design and implement of low-latency, high-availability, and performant applications</li>
+			<li>Integration of user-facing elements developed by front-end developers with server side logic</li>
+		</ul>
+
+	</div>
+	</div>
+
+
+	<!-- Widgets -->
+	<div class="five columns">
+
+		<!-- Sort by -->
+		<div class="widget">
+			<h4>Overview</h4>
+
+			<div class="job-overview">
+				
+				<ul>
+					<li>
+						<i class="fa fa-map-marker"></i>
+						<div>
+							<strong>Location:</strong>
+							<span>Near High - Tech city, MI 48124</span>
+						</div>
+					</li>
+					<li>
+						<i class="fa fa-user"></i>
+						<div>
+							<strong>Job Title:</strong>
+							<span>Python developer</span>
+						</div>
+					</li>
+					<li>
+						<i class="fa fa-clock-o"></i>
+						<div>
+							<strong>Hours:</strong>
+							<span>40h / week</span>
+						</div>
+					</li>
+					<li>
+						<i class="fa fa-money"></i>
+						<div>
+							<strong>Salary:</strong>
+							<span>₹ 40000 / month</span>
+						</div>
+					</li>
+				</ul>
+
+
+				<a href="#small-dialog" class="popup-with-zoom-anim button">Apply For This Job</a>
+
+				<div id="small-dialog" class="zoom-anim-dialog mfp-hide apply-popup">
+					<div class="small-dialog-headline">
+						<h2>Apply For This Job</h2>
+					</div>
+
+					<div class="small-dialog-content">
+						<!-- <form action="#" method="get" > -->
+						<form action="/apply_job/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+							<input type="text" name="fullname" placeholder="Full Name" required>
+							<input type="text" name="email" placeholder="Email Address" required>
+							<textarea name="message" placeholder="Your message / cover letter sent to the employer" required></textarea>
+
+							<!-- Upload CV -->
+							<div class="upload-info"><strong>Upload your CV (optional)</strong> <span>Max. file size: 5MB</span></div>
+							<div class="clearfix"></div>
+
+							<!-- <label class="upload-btn"> -->
+							    <input type="file"  name="cv" multiple required/>
+							    
+							<!-- </label> -->
+							<!-- <span class="fake-input">No file selected</span> -->
+
+							<div class="divider"></div>
+
+							<button class="send">Send Application</button>
+						</form>
+					</div>
+					
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	<!-- Widgets / End -->
+
+
+</div>
+
+<!-- Scripts
+================================================== -->
+<script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/jquery.superfish.js' %}"></script>
+<script src="{% static 'js/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script>
+<script src="{% static 'js/jquery.themepunch.showbizpro.min.js' %}"></script>
+<script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+<script src="{% static 'js/chosen.jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/jquery.jpanelmenu.js' %}"></script>
+<script src="{% static 'js/stacktable.js' %}"></script>
+
+
+
+</body>
+</html>

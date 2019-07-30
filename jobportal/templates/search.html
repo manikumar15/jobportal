@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<head>
+<title>Search jobs</title>
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+</head>
+<style>
+		table{
+			width:80%;
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		td{
+			padding-top: 5px;
+			padding-bottom: 10px;
+			text-align: center;
+			color: black;
+		}
+		th{
+			padding-top: 5px;
+			padding-bottom: 10px;
+			text-align: center;
+		}
+		tbody:nth-of-type(odd){
+			background-color: #ABEBC6;
+			color: white;
+		}
+		tbody:nth-of-type(even){
+			background-color: orange;
+			color: white;
+		}
+		thead{
+			background-color:#cd2642;
+			color: white;
+		}
+		tbody{
+			background-color: cyan;
+		}
+		
+		body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    color: #fff;
+    padding: 6px 5px;
+    font-family: Montserrat, sans-serif;
+  }
+ 
+	</style>
+<body>
+<div class="topnav">
+  <a class="active" href="">Home</a>
+  <a href="/register/">Register</a>
+  <a href="/aboutus/">About us</a>
+
+  	<div style="margin-left:1100px;">
+		<a href="/admin/">Admin</a>
+	</div>
+
+	<div style="margin-left:1200px;">
+		<a href="/loginview/">Login/signup</a>
+	</div>
+	
+</div>
+<center>
+<div>
+  <h1>Indeed</h1> 
+  <p><h2>" We  specialize  in  make  life's  Better "</h2></p> 
+</div>
+</center>
+
+<center>
+<div class="button_box2" style="margin: 30px;">
+<!-- <form class="form-wrapper-2 cf"> -->
+<form class="form-wrapper-2 cf" method="post" action="">{% csrf_token %}
+<input type="text" name="srh" placeholder="Search job here..." required>
+<button type="submit">Search</button>
+</form>
+</div>
+</center>
+<h3><marquee style="color: red"  scrollamount="15">Please &nbsp;&nbsp;&nbsp;&nbsp; Login &nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;&nbsp; Apply &nbsp;&nbsp;&nbsp;&nbsp;More &nbsp;&nbsp;&nbsp;&nbsp;Jobs&nbsp;&nbsp;&nbsp;&nbsp; 😃</marquee></h3>
+<div>
+	{% if messages %}
+		<ul class="messages">
+			{% for k in messages %}
+			<center><h4 style="color:red">{{ k }}</h4></center>
+			{% endfor %}
+		</ul>
+	{% endif %}
+</div><br>
+<div style="color:blue">
+{% if sr %}
+{% for i in sr %}
+    {% for k in i %}
+<center><table border="5px" width="1000px">
+	<thead>
+ 		<tr>
+ 			<th>JOB</th>
+ 			<th>SKILLS</th>
+ 			<th>EXPERIENCE</th>
+ 			<th>CONTACT</th>
+ 			<th>LOCATION</th>
+ 			<th>About Job</th>
+ 			<th>APPLY</th>
+ 		</tr>
+ 	</thead>
+	<tr class="{% cycle 'odd' 'even' %}">
+		<td>{{ k.job }}</td>
+		<td>{{ k.skills }}</td>
+		<td>{{ k.experience }}</td>
+		<td>{{ k.contact }}</td>
+		<td>{{ k.location }}</td>
+		<td><a href="/jobs/" style="text-decoration: none">click Here</a></td>
+		<td><a href="/register/" style="text-decoration: none">click Here</a></td>
+	</tr>
+
+</table></center>
+
+{% endfor %}
+    {% endfor %}
+{% endif %}
+</div>
+</div>
+
+
+
+</body>
+</html>

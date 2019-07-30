@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>main page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/green.css' %}" id="colors">
+
+</head>
+<style>
+		body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+<body>
+
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/register/">Register</a>
+  <a href="/aboutus/">About us</a>
+
+
+
+ <div style="margin-left:1100px;">
+		<a href="#">Hi , 😃 {{ g }}</a>
+	</div>
+
+	<div style="margin-left:1200px;">
+		<a href="/loginview/">Logout</a>
+	</div>
+</div>
+<div id="wrapper">
+
+
+<div class="clearfix"></div>
+
+
+
+<div class="container">
+	<div class="sixteen columns">
+		<h3 class="margin-bottom-25">Popular Categories</h3>
+		<ul id="popular-categories">
+			<li><a href="/apply_job/"><i class="fa fa-line-chart"></i> Accounting / Finance</a></li>
+			<li><a href="/apply_job/"><i class="fa fa-wrench"></i> Automotive Jobs</a></li>
+			<li><a href="/apply_job/"><i class="fa fa-building-o"></i> Construction / Facilities</a></li>
+			<li><a href="/apply_job/"><i class="fa fa-graduation-cap"></i> Education Training</a></li>
+			<li><a href="/apply_job/"><i class="fa fa-medkit"></i> Healthcare</a></li>
+			<li><a href="/apply_job/"><i class="fa fa-cutlery"></i> Restaurant / Food Service</a></li>
+			<li><a href="/apply_job/"><i class="fa fa-globe"></i> Transportation / Logistics</a></li>
+			<li><a href="/apply_job/"><i class="fa fa-laptop"></i> Software / Hardware</a></li>
+		</ul>
+
+		<div class="clearfix"></div>
+		<div class="margin-top-30"></div>
+
+		<div class="margin-bottom-50"></div>
+	</div>
+</div>
+
+
+<div class="container">
+	
+	<!-- Recent Jobs -->
+	<div class="eleven columns">
+	<div class="padding-right">
+		<h3 class="margin-bottom-25">Recent Jobs</h3>
+		<ul class="job-list">
+
+			<li class="highlighted"><a href="/apply_job/">
+				<img src="{% static 'images/job-list-logo-01.png' %}" alt="">
+				<div class="job-list-content">
+					<h4>Full Stack - Developer<span class="full-time">Full-Time</span></h4>
+					<div class="job-icons">
+						<span><i class="fa fa-briefcase"></i>  job id : 1233</span>
+						<span><i class="fa fa-map-marker"></i> madhapur</span>
+						<span><i class="fa fa-money"></i> ₹10000 / month</span>
+					</div>
+				</div>
+				</a>
+				<div class="clearfix"></div>
+			</li>
+
+			<li><a href="/apply_job/">
+				<img src="{% static 'images/job-list-logo-02.png' %}" alt="">
+				<div class="job-list-content">
+					<h4>Front - End Developer<span class="part-time">Part-Time</span></h4>
+					<div class="job-icons">
+						<span><i class="fa fa-briefcase"></i>  job id : 5678</span>
+						<span><i class="fa fa-map-marker"></i> Gachibowli</span>
+						<span><i class="fa fa-money"></i> ₹20000 / month</span>
+					</div>
+				</div>
+				</a>
+				<div class="clearfix"></div>
+			</li>
+
+			<li><a href="/apply_job/">
+				<img src="{% static 'images/job-list-logo-03.png' %}" alt="">
+				<div class="job-list-content">
+					<h4>Mean Stack Developer<span class="full-time">Full-Time</span></h4>
+					<div class="job-icons">
+						<span><i class="fa fa-briefcase"></i>  job id : 9765</span>
+						<span><i class="fa fa-map-marker"></i> panjagutta</span>
+						<span><i class="fa fa-money"></i> ₹30000 / month</span>
+					</div>
+				</div>
+				</a>
+				<div class="clearfix"></div>
+			</li>
+
+			<li><a href="/apply_job/">
+				<img src="{% static 'images/job-list-logo-04.png' %}" alt="">
+				<div class="job-list-content">
+					<h4>Android Developer <span class="internship">Internship</span></h4>
+					<div class="job-icons">
+						<span><i class="fa fa-briefcase"></i>  job id : 7646</span>
+						<span><i class="fa fa-map-marker"></i> ameerpet</span>
+						<span><i class="fa fa-money"></i> ₹10000/ month </span>
+					</div>
+				</div>
+				</a>
+				<div class="clearfix"></div>
+			</li>
+
+			<li><a href="/apply_job/">
+				<img src="{% static 'images/job-list-logo-05.png' %}" alt="">
+				<div class="job-list-content">
+					<h4>PHP - Developer<span class="temporary">Temporary</span></h4>
+					<div class="job-icons">
+						<span><i class="fa fa-briefcase"></i>  job id : 8529</span>
+						<span><i class="fa fa-map-marker"></i> mythrivanam</span>
+						<span><i class="fa fa-money"></i> ₹40000 / month</span>
+					</div>
+				</div>
+				</a>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+
+
+		<div class="margin-bottom-55"></div>
+	</div>
+	</div>
+
+	<!-- Job Spotlight -->
+	<div class="five columns">
+		<h3 class="margin-bottom-5">Job Spotlight</h3>
+
+		<!-- Navigation -->
+		<div class="showbiz-navigation">
+			<div id="showbiz_left_1" class="sb-navigation-left"><i class="fa fa-angle-left"></i></div>
+			<div id="showbiz_right_1" class="sb-navigation-right"><i class="fa fa-angle-right"></i></div>
+		</div>
+		<div class="clearfix"></div>
+		
+		<!-- Showbiz Container -->
+		<div id="job-spotlight" class="showbiz-container">
+			<div class="showbiz" data-left="#showbiz_left_1" data-right="#showbiz_right_1" data-play="#showbiz_play_1" >
+				<div class="overflowholder">
+
+					<ul>
+
+						<li>
+							<div class="job-spotlight">
+								<a href="/apply_job/"><h4>Logo Design <span class="part-time">Part-Time</span></h4></a>
+								<span><i class="fa fa-briefcase"></i> job id : 9207 </span>
+								<span><i class="fa fa-map-marker"></i> madhapur</span>
+								<span><i class="fa fa-money"></i> ₹10000 / hour</span>
+								<p>As advertising & content coordinator, you will support our social media team in producing high quality social content for a range of media channels.</p>
+								<a href="/apply_job/l" class="button">Apply For This Job</a>
+							</div>
+						</li>
+
+						<li>
+							<div class="job-spotlight">
+								<a href="/apply_job/"><h4>SAP Developer <span class="freelance">Freelance</span></h4></a>
+								<span><i class="fa fa-briefcase"></i>job id : 7666</span>
+								<span><i class="fa fa-map-marker"></i> Hightech city</span>
+								<span><i class="fa fa-money"></i> ₹5000 / hour</span>
+								<p>Etiam suscipit tellus ante, sit amet hendrerit magna varius in. Pellentesque lorem quis enim venenatis pellentesque.</p>
+								<a href="job-page.html" class="button">Apply For This Job</a>
+							</div>
+						</li>
+
+						<li>
+							<div class="job-spotlight">
+								<a href=""><h4>oracle Developer<span class="freelance">Freelance</span></h4></a>
+								<span><i class="fa fa-briefcase"></i>job id : 9975</span>
+								<span><i class="fa fa-map-marker"></i> Ameerpet</span>
+								<span><i class="fa fa-money"></i> ₹3000 / hour</span>
+								<p>Proin ligula neque, pretium et ipsum eget, mattis commodo dolor. Etiam tincidunt libero quis commodo.</p>
+								<a href="/apply_job/" class="button">Apply For This Job</a>
+							</div>
+						</li>
+
+
+					</ul>
+					<div class="clearfix"></div>
+
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/jquery.superfish.js' %}"></script>
+<script src="{% static 'js/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script>
+<script src="{% static 'js/jquery.themepunch.showbizpro.min.js' %}"></script>
+<script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+<script src="{% static 'js/chosen.jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/jquery.jpanelmenu.js' %}"></script>
+<script src="{% static 'js/stacktable.js' %}"></script>
+
+</body>
+</html>

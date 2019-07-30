@@ -1,0 +1,237 @@
+/* krds */
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans Regular'), local('DroidSans-Regular'), url(https://fonts.gstatic.com/s/droidsans/v10/SlGVmQWMvZQIdix7AFxXkHNSaA.ttf) format('truetype');
+}
+/* variables */
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+ol,
+ul {
+  list-style: none;
+}
+input,
+button {
+  outline: none;
+}
+html {
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #16a085;
+  color: #333;
+  font-family: "Droid Sans", arial, sans-serif;
+  font-size: 16px;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  margin: 20px 0 0;
+  text-align: center;
+}
+/* formpage */
+.formPage {
+  margin: 0 auto;
+  max-width: 600px;
+  min-height: 600px;
+  position: relative;
+}
+.formCtlWrapper {
+  font-size: 0;
+  margin: 20px 0;
+  text-align: center;
+}
+.formCtlWrapper a,
+.formCtlWrapper i {
+  display: inline-block;
+  vertical-align: middle;
+}
+.formCtlWrapper i {
+  background-color: #fff;
+  height: 12px;
+  width: 1px;
+}
+.formCtlWrapper a {
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+  text-transform: uppercase;
+}
+.formCtlWrapper a:after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  transition: all 300ms;
+}
+.formCtlWrapper a.active {
+  color: #000;
+}
+.formCtlWrapper a.active:after {
+  background-color: #000;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.btn {
+  color: #000;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 20px;
+  padding: 0 10px 5px;
+  text-decoration: none;
+}
+.formBlock {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  min-width: 320px;
+  min-height: 340px;
+  padding: 20px;
+  position: absolute;
+}
+.formBlock h4 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0 0 12px;
+}
+.formBlock.login {
+  left: 50%;
+  top: 20px;
+  z-index: 2;
+  transition: all 300ms;
+  -webkit-transform: translateX(-60%) scale(0.9);
+          transform: translateX(-60%) scale(0.9);
+}
+.formBlock.login > * {
+  transition: opacity 500ms;
+  opacity: 0;
+}
+.formBlock.login.active {
+  top: 55px;
+  -webkit-transform: translateX(-50%) scale(1);
+          transform: translateX(-50%) scale(1);
+}
+.formBlock.login.active > * {
+  opacity: 1;
+}
+.formBlock.register {
+  left: 50%;
+  top: 55px;
+  z-index: 1;
+  transition: all 300ms;
+  -webkit-transform: translateX(-40%) scale(0.9);
+          transform: translateX(-40%) scale(0.9);
+}
+.formBlock.register > * {
+  transition: opacity 500ms;
+  opacity: 0;
+}
+.formBlock.register.active {
+  -webkit-transform: translateX(-50%) scale(1);
+          transform: translateX(-50%) scale(1);
+  z-index: 3;
+}
+.formBlock.register.active > * {
+  opacity: 1;
+}
+.formBlock.register.active .error {
+  margin-top: 10px;
+}
+.formBlock .input-group {
+  position: relative;
+}
+.formBlock .input-group p {
+  color: #bdc3c7;
+  padding: 0 6px;
+  position: absolute;
+  left: 10px;
+  top: 19px;
+  transition: all 300ms ease;
+}
+.formBlock .input-group p.active {
+  background-color: #fff;
+  color: #16a085;
+  padding: 2px 6px;
+  top: -2px;
+}
+.formBlock .checkbox-group {
+  margin: 3px 0 10px;
+  overflow: hidden;
+}
+.formBlock .checkbox-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+.formBlock .checkbox-group input,
+.formBlock .checkbox-group span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.formBlock .checkbox-group input {
+  margin-left: 10px;
+}
+.formBlock .checkbox-group span {
+  font-size: 14px;
+}
+.formBlock .checkbox-group a {
+  color: blue;
+  display: inline-block;
+  float: right;
+  font-size: 13px;
+  text-decoration: none;
+}
+.formBlock .checkbox-group a:hover {
+  text-decoration: underline;
+}
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  border: 1px solid #ddd;
+  box-shadow: none;
+  border-radius: 4px;
+  margin: 8px 0;
+  padding: 5px 10px;
+  height: 40px;
+  width: 100%;
+}
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+  border-color: #16a085;
+}
+input[type="checkbox"] {
+  height: 12px;
+  width: 12px;
+}
+button[type="submit"] {
+  background-color: #34495e;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  height: 40px;
+  margin: 20px 0 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+button[type="submit"]:hover {
+  background-color: #2c3e50;
+}
