@@ -9,8 +9,6 @@ job portal website
 ![register](https://user-images.githubusercontent.com/34789553/62212005-87337c80-b3bd-11e9-8719-af63d912eb52.png)
 
 
-![login](https://user-images.githubusercontent.com/34789553/62212074-9e726a00-b3bd-11e9-8468-5b1189b2a0fd.png)
-
 
 ![main](https://user-images.githubusercontent.com/34789553/62212224-f14c2180-b3bd-11e9-8358-e228c12c3408.png)
 
